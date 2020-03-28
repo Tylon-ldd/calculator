@@ -8,10 +8,11 @@ const button = (props) => {
     }
 
     return (
-        <button className={classes.join(' ')}>
+        <button className={classes.join(' ')} onClick={props.onButtonPress}>
             {props.children}
         </button>
     );
 }
+
 
 export default button;
