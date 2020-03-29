@@ -94,59 +94,78 @@ const keypad = (props) => {
     return (
         // 2D array v 1.0
         <section className="keypad">
-            <KeypadRow>
-                {keypadItems[0].map(item => (
-                    <Button 
-                        key={item.text}
-                        onButtonPress={item.onButtonPress || props.onButtonPress}
-                    >
-                        {item.text}
-                    </Button>
-                ))}
-            </KeypadRow>
-            <KeypadRow>
-                {keypadItems[1].map(item => (
-                    <Button 
-                        key={item.text}
-                        onButtonPress={item.onButtonPress || props.onButtonPress}
-                    >
-                        {item.text}
-                    </Button>
-                ))}
-            </KeypadRow>
-            <KeypadRow>
-                {keypadItems[2].map(item => (
-                    <Button 
-                        key={item.text}
-                        onButtonPress={item.onButtonPress || props.onButtonPress}
-                    >
-                        {item.text}
-                    </Button>
-                ))}
-            </KeypadRow>
-            <KeypadRow>
-                {keypadItems[3].map(item => (
-                    <Button 
-                        key={item.text}
-                        onButtonPress={item.onButtonPress || props.onButtonPress}
-                    >
-                        {item.text}
-                    </Button>
-                ))}
-            </KeypadRow>
-            <KeypadRow>
-                {keypadItems[4].map(item => (
-                    <Button 
-                        type={item.type}
-                        key={item.text}
-                        onButtonPress={item.onButtonPress || props.onButtonPress}
-                    >
-                        {item.text}
-                    </Button>
-                ))}
-            </KeypadRow>
+            {keypadItems.map(row => (
+                <KeypadRow>
+                    {row.map(item => (
+                        <Button
+                            type={item.type}
+                            key={item.text}
+                            onButtonPress={item.onButtonPress || props.onButtonPress}
+                        >
+                            {item.text}
+                        </Button>
+                    ))}
+                </KeypadRow>
+            ))}
         </section>
     );
+
+    // return (
+    //     // 2D array v 1.0
+    //     <section className="keypad">
+    //         <KeypadRow>
+    //             {keypadItems[0].map(item => (
+    //                 <Button 
+    //                     key={item.text}
+    //                     onButtonPress={item.onButtonPress || props.onButtonPress}
+    //                 >
+    //                     {item.text}
+    //                 </Button>
+    //             ))}
+    //         </KeypadRow>
+    //         <KeypadRow>
+    //             {keypadItems[1].map(item => (
+    //                 <Button 
+    //                     key={item.text}
+    //                     onButtonPress={item.onButtonPress || props.onButtonPress}
+    //                 >
+    //                     {item.text}
+    //                 </Button>
+    //             ))}
+    //         </KeypadRow>
+    //         <KeypadRow>
+    //             {keypadItems[2].map(item => (
+    //                 <Button 
+    //                     key={item.text}
+    //                     onButtonPress={item.onButtonPress || props.onButtonPress}
+    //                 >
+    //                     {item.text}
+    //                 </Button>
+    //             ))}
+    //         </KeypadRow>
+    //         <KeypadRow>
+    //             {keypadItems[3].map(item => (
+    //                 <Button 
+    //                     key={item.text}
+    //                     onButtonPress={item.onButtonPress || props.onButtonPress}
+    //                 >
+    //                     {item.text}
+    //                 </Button>
+    //             ))}
+    //         </KeypadRow>
+    //         <KeypadRow>
+    //             {keypadItems[4].map(item => (
+    //                 <Button 
+    //                     type={item.type}
+    //                     key={item.text}
+    //                     onButtonPress={item.onButtonPress || props.onButtonPress}
+    //                 >
+    //                     {item.text}
+    //                 </Button>
+    //             ))}
+    //         </KeypadRow>
+    //     </section>
+    // );
 
 //   <section className="keypad">
 //     <KeypadRow>
